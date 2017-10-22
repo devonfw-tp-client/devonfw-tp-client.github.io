@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Exercises</title>
+    <link rel="icon" href="../common/img/favicon.ico">
+
+
+    <link rel="stylesheet" href="../reveal.js-3.3.0/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js-3.3.0/css/theme/black.css">
+    <link rel="stylesheet" href="../common/css/common.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../reveal.js-3.3.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../reveal.js-3.3.0/css/print/pdf.css' : '../reveal.js-3.3.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<section class="devon-link">
+    <a href="http://devonfw.com" target="_blank"><img height="50px" src="../common/img/devon_logo_white.png"></a>
+</section>
+<section class="angular-link">
+    <a href="http://angular.io" target="_blank"><img height="50px" src="../common/img/angular.svg"></a>
+</section>
+<div class="devon reveal">
+    <div class="slides">
+        <section id="first-web-component">
+            <section>
+                <h3>Your first Angular (reactive) form (1/3)</h3>
+                <ol>
+                    <li>Create a new component, e.g. UserDetails: <span class="monospace highlight">ng g component UserDetails</span>.</li>
+                    <li>Go to <span class="monospace highlight">user-details.component.html</span> and add a <span class="monospace highlight">&lt;form&gt;</span> element.</li>
+                    <li>Add two input fields to the form: <span class="monospace highlight">Name</span> and <span class="monospace highlight">Email</span>. Make use of the <a href="https://material.angular.io/components/input/overview" target="_blank">Angular Material input</a></li>
+                    <li>Eventually add a submit button <span class="monospace highlight">Send</span>. Make use of the <a href="https://material.angular.io/components/button/overview" target="_blank">Angular Material button</a> </li>
+                    <li>Don't forget to import necessary modules such as <span class="monospace highlight">MatFormFieldModule, MatInputModule and MatButtonModule</span>.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your first Angular (reactive) form (2/3)</h3>
+                <ol>
+                    <li>Also, import <span class="monospace highlight">ReactiveFormsModule</span>.</li>
+                    <li>Go to <span class="monospace highlight">user-details.component.ts</span> and add a <span class="monospace highlight">form</span> property of type <a href="https://angular.io/api/forms/FormControl" target="_blank">FormControl</a>.</li>
+                    <li>Inject a <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a> into the constructor and use it to create a form group containing the <span class="monospace highlight">name and email</span> controls.
+                        Assign the form group to the <span class="monospace highlight">form</span> property</li>
+                    <li>Add the <span class="monospace highlight">send()</span> method which prints out the current name's and email's value to the console.</li>
+                </ol>
+            </section>
+            <section>
+                <h3>Your first Angular (reactive) form (3/3)</h3>
+                <ol>
+                    <li>Go to <span class="monospace highlight">user-details.component.html</span> and put the <span class="monospace highlight">[formGroup]</span> property binding to the <span class="monospace highlight">form</span> property on the <span class="monospace highlight">&lt;form&gt;</span> element.</li>
+                    <li>Set the <span class="monospace highlight">formGroupName</span> attributes on <span class="monospace highlight">&lt;input&gt;</span> elements. As values use the names which you picked for the a <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>.</li>
+                    <li>Add the <span class="monospace highlight">(submit)</span> event binding to the <span class="monospace highlight">send()</span> method on the <span class="monospace highlight">&lt;form&gt;</span> element.</li>
+                </ol>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="../reveal.js-3.3.0/lib/js/head.min.js"></script>
+<script src="../reveal.js-3.3.0/js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            { src: '../reveal.js-3.3.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: '../reveal.js-3.3.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '../reveal.js-3.3.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: '../reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: '../reveal.js-3.3.0/plugin/zoom-js/zoom.js', async: true },
+            { src: '../reveal.js-3.3.0/plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+</body>
+</html>
